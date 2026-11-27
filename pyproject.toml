@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-utils"
+version = "0.5.0"
+description = "Lodash-style stdlib-only utility library for agents (Chinese text, markdown, cleaning)."
+requires-python = ">=3.10"
+# 唯一带运行时依赖的模块：extras.retrieval（verbatim 移植 roundtable/rt/retrieval.py，源用 httpx）
+dependencies = ["httpx"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["agent_utils*"]
